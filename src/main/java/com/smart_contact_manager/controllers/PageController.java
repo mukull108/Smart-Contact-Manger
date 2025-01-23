@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 @Controller
 public class PageController {
     
@@ -14,4 +15,19 @@ public class PageController {
         model.addAttribute("add", "Water works bhind");
         return "home";
     }
+
+    @RequestMapping("/about")
+    public String about(){
+        System.out.println("about page is loading");
+        return "about";
+    }
+
+    //services
+    @RequestMapping("/services")
+    public String requestMethodName() {
+        System.out.println("services page loading");
+        return "services";
+    }
+    
+    
 }
