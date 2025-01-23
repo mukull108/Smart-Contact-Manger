@@ -3,6 +3,9 @@ package com.smart_contact_manager.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -25,9 +28,26 @@ public class PageController {
 
     //services
     @RequestMapping("/services")
-    public String requestMethodName() {
+    public String services() {
         System.out.println("services page loading");
         return "services";
+    }
+
+    @RequestMapping("/register")
+    public String register() {
+        return "register";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "Login";
+    }
+    
+
+    @RequestMapping("/contact")
+    public String contact() {
+        System.out.println("Contact page loading");
+        return "contact";
     }
     
     
