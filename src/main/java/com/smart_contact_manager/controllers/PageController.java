@@ -16,6 +16,7 @@ public class PageController {
         return "home";
     }
 
+    //about
     @RequestMapping("/about")
     public String about(){
         System.out.println("about page is loading");
