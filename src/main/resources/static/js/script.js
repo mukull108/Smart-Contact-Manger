@@ -2,7 +2,7 @@ console.log("Script is loading...");
 
 let currentTheme = getTheme();
 //initially 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener('DOMContentLoaded', () => {
     changeTheme();
 });
 
@@ -16,7 +16,7 @@ function changeTheme() {
     const chagneThemeButton = document.querySelector('#theme_change_button');
     chagneThemeButton.addEventListener("click", (event) => {
         console.log("change theme button clicked");
-        const oldTheme = currentTheme;
+        let oldTheme = currentTheme;
         if (currentTheme == "dark") {
             //change it to light
             currentTheme = "light";
@@ -26,7 +26,9 @@ function changeTheme() {
         //update in local storage also
         setTheme(currentTheme);
         //remove the current theme
-        document.querySelector('html').classList.remove(oldTheme);
+        if (oldTheme) {
+            document.querySelector('html').classList.remove(oldTheme);
+        }
         //set the current theme 
         document.querySelector('html').classList.add(currentTheme);
 

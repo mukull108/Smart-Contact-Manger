@@ -47,6 +47,7 @@ public class PageController {
         System.out.println("Contact page loading");
         return "contact";
     }
+
     
     
 }
