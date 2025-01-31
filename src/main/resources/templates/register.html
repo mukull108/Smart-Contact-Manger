@@ -19,13 +19,14 @@
                     <p class="font-normal text-gray-400 dark:text-gray-400">
                         Start Managing Your Contacts on Cloud.</p>
 
-                    <form action="" class="mt-5">
+
+                    <form th:action="@{'/do-register'}" method="post" th:object="${userForm}" class="mt-5">
                         <!-- User Name -->
                         <div class="mb-3">
                             <label for="name" class="block mb-2 text-sm font-medium
                              text-gray-900 dark:text-white">User Name</label>
-                            <input type="text" id="userName" class="bg-gray-50 
-                            border border-gray-300 text-gray-900 text-sm 
+
+                            <input type="text" id="userName" th:field="*{name}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm 
                             rounded-lg focus:ring-blue-500 focus:border-blue-500 
                             block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
                              dark:placeholder-gray-400 dark:text-white
@@ -35,7 +36,7 @@
                         <div class="mb-3">
                             <label for="email" class="block mb-2 text-sm font-medium
                              text-gray-900 dark:text-white">Email</label>
-                            <input type="email" id="email" class="bg-gray-50 
+                            <input type="email" id="email" th:field="*{email}" class="bg-gray-50 
                             border border-gray-300 text-gray-900 text-sm 
                             rounded-lg focus:ring-blue-500 focus:border-blue-500 
                             block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
@@ -48,7 +49,7 @@
                         <div class="mb-3">
                             <label for="password" class="block mb-2 text-sm font-medium
                              text-gray-900 dark:text-white">Password</label>
-                            <input type="password" id="password" class="bg-gray-50 
+                            <input type="password" id="password" th:field="*{password}" class="bg-gray-50 
                             border border-gray-300 text-gray-900 text-sm 
                             rounded-lg focus:ring-blue-500 focus:border-blue-500 
                             block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
@@ -56,11 +57,11 @@
                               dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                         </div>
 
-                        <!-- password -->
+                        <!-- contact number -->
                         <div class="mb-3">
                             <label for="phone" class="block mb-2 text-sm font-medium
                              text-gray-900 dark:text-white">Contact Number</label>
-                            <input type="text" id="phone" class="bg-gray-50 
+                            <input type="text" id="phone" th:field="*{phoneNumber}" class="bg-gray-50 
                             border border-gray-300 text-gray-900 text-sm 
                             rounded-lg focus:ring-blue-500 focus:border-blue-500 
                             block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600
@@ -68,22 +69,22 @@
                               dark:focus:ring-blue-500 dark:focus:border-blue-500" required />
                         </div>
 
+                        <!-- about -->
                         <div class="mb-3">
-                            <label for="message"
-                                class="block mb-2 text-sm font-medium text-gray-900
+                            <label for="message" class="block mb-2 text-sm font-medium text-gray-900
                                  dark:text-white">About Yourself</label>
-                            <textarea id="message" rows="6"
+                            <textarea id="message" rows="6" th:field="*{about}"
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                                 placeholder="Write here..."></textarea>
                         </div>
-                        
+
                         <!-- Buttons -->
                         <div class="mb-3 flex justify-center space-x-3">
-                            <button class="px-3 py-2 rounded bg-gray-700 hover:bg-gray-800
+                            <button type="submit" class="px-3 py-2 rounded bg-gray-700 hover:bg-gray-800
                              text-white dark:bg-blue-800
                               dark:hover:bg-blue-700">Signup</button>
 
-                            <button class="px-3 py-2 rounded bg-orange-800 hover:bg-orange-600
+                            <button type="reset" class="px-3 py-2 rounded bg-orange-800 hover:bg-orange-600
                              text-white dark:bg-orange-800
                               dark:hover:bg-orange-700">Reset</button>
                         </div>
